@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Socially Smart</title>
+  </head>
+  <body>
+    <p><a href="{% url 'scrape_onion' %}">Scrape Onion</a> <a href="{% url 'scrape_onion' %}">Scrape Onion</a> </p>
+    <h2>Your daily posts: </h2>
+    <h3>Posts form The Onion News   :</h3>
+    {% for obj in object_list %}
+    <li>
+      <a href="{{obj.url}}"> {{obj.title}}</a>
+    </li>
+    {% endfor %}
+
+    <h3>Posts from reddit :</h3>
+    {% for obj in object_list %}
+    <li>
+      <a href="{{obj.url}}"> {{obj.title}}</a>
+    </li>
+    {% endfor %}
+  </body>
+</html>
