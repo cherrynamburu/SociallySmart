@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <p><a href="{% url 'scrape_reddit' %}">Scrape Reddit</a></p>
+    <h2>Your daily posts: </h2>
+    <h3>Posts form The Reddit  :</h3>
+
+    {% for obj in object_list %}
+    <li>
+      <a href="{{obj.url}}"> {{obj.title}}</a> Comments:{{obj.comments}}
+      <p></p>
+    </li>
+    {% endfor %}
+  </body>
+</html>
